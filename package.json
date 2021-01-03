@@ -1,0 +1,20 @@
+{
+  "name": "deploy_web",
+  "version": "1.0.0",
+  "description": "quan ly giao thong web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd quanlygiaothongweb && npm start",
+    "server": "node server.js",
+    "start": "concurrently --kill-others \"npm run server\"",
+    "heroku-postbuild": "cd quanlygiaothongweb && npm install --only=dev && npm install && npm run build"
+  },
+  "author": "FandF",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
