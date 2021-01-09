@@ -69,5 +69,8 @@
       "not op_mini all"
     ],
     "development": []
+  },
+  "engines": {
+    "node": "14.2.0"
   }
 }
