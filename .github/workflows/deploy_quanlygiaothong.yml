@@ -21,7 +21,6 @@ jobs:
                - name: start front-end
                  run: |
                       npm install
-                      npm run start
                - name: "Deploy to Azure Web App"
                  uses: azure/webapps-deploy@v2
                  with:
