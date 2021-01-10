@@ -6,10 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd quanlygiaothongweb && npm start",
-    "server": "node server.js",
     "start": "node server.js",
-    "pre-build": "cd quanlygiaothongweb && npm run build",
-    "heroku-postbuild": "cd quanlygiaothongweb && npm install --only=dev && npm install && npm run build"
+    "pre-build": "cd quanlygiaothongweb && npm run build"
   },
   "author": "FandF",
   "license": "ISC",

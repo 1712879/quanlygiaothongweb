@@ -4,32 +4,23 @@
 name: Build and deploy Node.js app to Azure Web App - quanlygiaothong
 
 on:
-  push:
-    branches:
-      - deploy
+     push:
+          branches:
+               - deploy
 
 jobs:
-  build-and-deploy:
-    runs-on: windows-latest
+     build-and-deploy:
+          runs-on: windows-latest
 
-    steps:
-    - uses: actions/checkout@master
+          steps:
+               - uses: actions/checkout@deploy
 
-    - name: Set up Node.js version
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-
-    - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'quanlygiaothong'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee6829498c874a3dbcfda92c18a6f100 }}
-        package: .
+               - name: start front-end
+                 run: |
+                      npm run start
+                 with:
+                      app-name: "quanlygiaothong"
+                      NODE_ENV: "production"
+                      publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee6829498c874a3dbcfda92c18a6f100 }}
+                      package: .
+                      PORT: 5000
