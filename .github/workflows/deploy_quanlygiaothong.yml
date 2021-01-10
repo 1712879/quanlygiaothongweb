@@ -22,3 +22,10 @@ jobs:
                  run: |
                       npm install
                       npm run start
+               - name: 'Deploy to Azure Web App'
+                    uses: azure/webapps-deploy@v2
+                    with:
+                    app-name: 'quanlygiaothong'
+                    slot-name: 'production'
+                    publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee6829498c874a3dbcfda92c18a6f100 }}
+                    package: .
