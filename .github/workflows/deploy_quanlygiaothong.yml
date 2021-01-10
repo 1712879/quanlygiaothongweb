@@ -18,9 +18,3 @@ jobs:
                - name: start front-end
                  run: |
                       npm run start
-                 with:
-                      app-name: "quanlygiaothong"
-                      NODE_ENV: "production"
-                      publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee6829498c874a3dbcfda92c18a6f100 }}
-                      package: .
-                      PORT: 5000
