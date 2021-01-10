@@ -21,5 +21,4 @@ jobs:
                - name: start front-end
                  run: |
                       npm install
-                      npm pre-build
                       npm run start
